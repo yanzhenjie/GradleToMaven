@@ -1,3 +1,4 @@
+apply plugin: rootProject.ext.plugins.maven
 apply plugin: rootProject.ext.plugins.bintray
 
 version = rootProject.ext.bintray.version
@@ -69,5 +70,13 @@ bintray {
         vcsUrl = gitUrl
         licenses = [rootProject.ext.bintray.bintrayLicense]
         publish = true
+        version {
+            gpg {
+                sign = true
+                passphrase = properties.getProperty("bintray.gpg.password")
+                user = properties.getProperty("bintray.oss.user")
+                password = properties.getProperty("bintray.oss.password")
+            }
+        }
     }
 }
