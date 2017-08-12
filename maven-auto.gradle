@@ -74,8 +74,12 @@ bintray {
             gpg {
                 sign = true
                 passphrase = properties.getProperty("bintray.gpg.password")
-                user = properties.getProperty("bintray.oss.user")
+            }
+            mavenCentralSync {
+            	sync = true
+            	user = properties.getProperty("bintray.oss.user")
                 password = properties.getProperty("bintray.oss.password")
+                close = '1'
             }
         }
     }
