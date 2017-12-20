@@ -1,4 +1,4 @@
-﻿# 简化Gradle发布Android项目到Jcenter/Maven
+﻿# 简化Gradle发布Java/Android项目到Jcenter/Maven
 这个仓库是因为个人发布项目到Jcenter/Maven时每次需要写maven文件比较麻烦，所以放到github上来方便自己，如果其它人看到之后也喜欢这种方式，不妨也试试。
 
 这个库只是为了简化发布，并不是发布流程，具体的发布流程，请参考下面的链接：  
