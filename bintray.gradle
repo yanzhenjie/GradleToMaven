@@ -38,14 +38,22 @@ install {
         }
     }
 }
-task sourcesJar(type: Jar) {
-    from android.sourceSets.main.java.srcDirs
-    classifier = 'sources'
-}
-task javadoc(type: Javadoc) {
-    source = android.sourceSets.main.java.srcDirs
-    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
-    failOnError false
+
+if (project.hasProperty("android")) {
+    task sourcesJar(type: Jar) {
+    	from android.sourceSets.main.java.srcDirs
+    	classifier = 'sources'
+	}
+	task javadoc(type: Javadoc) {
+    	source = android.sourceSets.main.java.srcDirs
+    	classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+    	failOnError false
+	}
+} else {
+    task sourcesJar(type: Jar) {
+    	from sourceSets.main.allSource
+    	classifier = 'sources'
+	}
 }
 task javadocJar(type: Jar, dependsOn: javadoc) {
     classifier = 'javadoc'
@@ -70,5 +78,6 @@ bintray {
         vcsUrl = gitUrl
         licenses = [rootProject.ext.bintray.bintrayLicense]
         publish = true
+        publicDownloadNumbers = true
     }
 }
