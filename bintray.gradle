@@ -50,10 +50,10 @@ if (project.hasProperty("android")) {
     	failOnError false
 	}
 } else {
-    task sourcesJar(type: Jar) {
-    	from sourceSets.main.allSource
-    	classifier = 'sources'
-	}
+    task sourcesJar(type: Jar, dependsOn: classes) {
+        from sourceSets.main.allSource
+        classifier = 'sources'
+    }
 }
 task javadocJar(type: Jar, dependsOn: javadoc) {
     classifier = 'javadoc'

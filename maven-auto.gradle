@@ -49,7 +49,7 @@ if (project.hasProperty("android")) {
         failOnError false
     }
 } else {
-    task sourcesJar(type: Jar) {
+    task sourcesJar(type: Jar, dependsOn: classes) {
         from sourceSets.main.allSource
         classifier = 'sources'
     }
