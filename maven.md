@@ -9,7 +9,7 @@ apply from: 'https://raw.githubusercontent.com/yanzhenjie/bintray/master/maven.g
 
 自动同步到`mavenCentral()`，在要发布的`module`的`build.gradle`文件末尾添加：
 ```groovy
-apply from: 'https://raw.githubusercontent.com/yanzhenjie/bintray/master/maven-auto.gradle?raw=true'
+apply from: 'https://raw.githubusercontent.com/yanzhenjie/bintray/master/maven-auto.gradle'
 ```
 
 ## 二、配置config.gradle
