@@ -3,8 +3,8 @@
 
 本库提供的方式可以只发布到`jcenter()`，或者同时发布到`jcenter()`和`mavenCentral()`，后者的原理是发布到`jcenter()`后通过Binary同步到`mavenCentral()`，所以不能只发布到`mavenCentral()`。  
 
-- [仅发布到`jcenter()`](./Bintray.md)  
-- [同时发布到`jcenter()`和`mavenCentral()`](./Maven.md)  
+- [仅发布到`jcenter()`](./bintray.md)  
+- [同时发布到`jcenter()`和`mavenCentral()`](./maven.md)  
 
 ## 相关链接
 1. Binary：[https://bintray.com](https://bintray.com)
