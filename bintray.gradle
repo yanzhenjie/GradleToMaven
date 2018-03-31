@@ -1,4 +1,3 @@
-apply plugin: rootProject.ext.plugins.maven
 apply plugin: rootProject.ext.plugins.bintray
 
 version = rootProject.ext.bintray.version

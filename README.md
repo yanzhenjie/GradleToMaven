@@ -1,15 +1,17 @@
-﻿# 简化Gradle发布Java/Android项目到Jcenter/Maven
-这个仓库是因为个人发布项目到Jcenter/Maven时每次需要写maven文件比较麻烦，所以放到github上来方便自己，如果其它人看到之后也喜欢这种方式，不妨也试试。
+﻿# 使用Gradle发布Java项目到jcenter/mavenCentral
+这个仓库是因为个人发布项目到`jcenter/mavenCentral()`时每次需要做配置比较麻烦，所以放到Github上来方便自己，如果其它人看到之后也喜欢这种方式，不妨也试试。
 
-这个库只是为了简化发布，并不是发布流程，具体的发布流程，请参考下面的链接：  
-[http://blog.csdn.net/yanzhenjie1003/article/details/51672530](http://blog.csdn.net/yanzhenjie1003/article/details/51672530)
+本库提供的方式可以只发布到`jcenter()`，或者同时发布到`jcenter()`和`mavenCentral()`，后者的原理是发布到`jcenter()`后通过Binary同步到`mavenCentral()`，所以不能只发布到`mavenCentral()`。  
 
-本库提供的方式可以只发布到Jcenter，或者发布Jcenter和Maven，后者的原理是发布到Jcenter后同步到Maven，所以不能只发布到Maven。  
+- [仅发布到`jcenter()`](./Bintray.md)  
+- [同时发布到`jcenter()`和`mavenCentral()`](./Maven.md)  
 
-- [仅发布到Jcenter](./Bintray.md)  
-- [同时发布到Jcenter和Maven](./Maven.md)  
+## 相关链接
+1. Binary：[https://bintray.com](https://bintray.com)
+2. Sonatype：[https://issues.sonatype.org](https://issues.sonatype.org)
+3. Release process：[http://blog.csdn.net/yanzhenjie1003/article/details/51672530](http://blog.csdn.net/yanzhenjie1003/article/details/51672530)
 
-# License
+## License
 ```text
 Copyright 2017 Yan Zhenjie
 
