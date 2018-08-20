@@ -40,28 +40,32 @@ install {
 }
 if (project.getPlugins().hasPlugin("com.android.application") ||
     project.getPlugins().hasPlugin("com.android.library")) {
+	task javadoc(type: Javadoc) {
+    	source = android.sourceSets.main.java.source
+    	classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+    	failOnError false
+	}
     task sourcesJar(type: Jar) {
-        from android.sourceSets.main.java.srcDirs
         classifier = 'sources'
-    }
-    task javadoc(type: Javadoc) {
-        source = android.sourceSets.main.java.srcDirs
-        classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
-        failOnError false
+    	from android.sourceSets.main.java.source
+	}
+    task javadocJar(type: Jar, dependsOn: javadoc) {
+        classifier = 'javadoc'
+        from androidJavadocs.destinationDir
     }
 } else {
     task sourcesJar(type: Jar, dependsOn: classes) {
-        from sourceSets.main.allSource
         classifier = 'sources'
+        from sourceSets.main.allSource
+    }
+    task javadocJar(type: Jar, dependsOn: javadoc) {
+        classifier = 'javadoc'
+        from javadoc.destinationDir
     }
 }
-task javadocJar(type: Jar, dependsOn: javadoc) {
-    classifier = 'javadoc'
-    from javadoc.destinationDir
-}
 artifacts {
-    archives javadocJar
     archives sourcesJar
+    archives javadocJar
 }
 Properties properties = new Properties()
 properties.load(project.rootProject.file('local.properties').newDataInputStream())
