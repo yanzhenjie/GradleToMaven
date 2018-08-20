@@ -38,7 +38,8 @@ install {
         }
     }
 }
-if (project.hasProperty("android")) {
+if (project.getPlugins().hasPlugin("com.android.application") ||
+    project.getPlugins().hasPlugin("com.android.library")) {
     task sourcesJar(type: Jar) {
         from android.sourceSets.main.java.srcDirs
         classifier = 'sources'
