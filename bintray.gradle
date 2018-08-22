@@ -49,7 +49,7 @@ if (project.getPlugins().hasPlugin("com.android.application") ||
         classifier = 'sources'
     	from android.sourceSets.main.java.source
 	}
-    task javadocJar(type: Jar, dependsOn: javadoc) {
+    task javadocJar(type: Jar, dependsOn: androidJavadocs) {
         classifier = 'javadoc'
         from androidJavadocs.destinationDir
     }
