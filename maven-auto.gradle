@@ -1,5 +1,5 @@
-apply plugin: rootProject.ext.plugins.maven
-apply plugin: rootProject.ext.plugins.bintray
+apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'com.jfrog.bintray'
 
 version = rootProject.ext.bintray.version
 

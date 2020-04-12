@@ -1,4 +1,4 @@
-apply plugin: rootProject.ext.plugins.bintray
+apply plugin: 'com.jfrog.bintray'
 
 version = rootProject.ext.bintray.version
 
