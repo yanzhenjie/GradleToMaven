@@ -1,4 +1,5 @@
-﻿# 使用 Gradle 发布 Java/Android 项目到 MavenCentral
+﻿Gitee 项目地址：[https://gitee.com/yanzhenjie/GradleToMaven](https://gitee.com/yanzhenjie/GradleToMaven)  
+GiHub 项目地址：[https://github.com/yanzhenjie/GradleToMaven](https://github.com/yanzhenjie/GradleToMaven)
 
 1、在要发布的模块的 gradle 脚本中应用本仓库提供的发布脚本：
 
@@ -11,7 +12,12 @@ dependencies {
    ...
 }
 
-// This.
+// 以下2个地址二选一apply即可
+
+// 1、不能访问GitHub，使用 Gitee 的地址：
+apply from: 'https://gitee.com/yanzhenjie/GradleToMaven/raw/master/publish.gradle'
+
+// 2、使用 Github 的地址：
 apply from: 'https://raw.githubusercontent.com/yanzhenjie/GradleToMaven/master/publish.gradle'
 ```
 
